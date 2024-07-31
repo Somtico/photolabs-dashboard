@@ -31,10 +31,10 @@ class Dashboard extends Component {
 
   selectPanel(id) {
     this.setState({
-     focused: id
+      focused: id,
     });
-   }
-   
+  }
+
   render() {
     // Apply the conditional CSS class
     const dashboardClasses = classnames("dashboard", {
@@ -55,7 +55,7 @@ class Dashboard extends Component {
         id={panel.id}
         label={panel.label}
         value={panel.value}
-        onSelect={this.selectPanel}
+        onSelect={(event) => this.selectPanel(panel.id)}
       />
     ));
 
